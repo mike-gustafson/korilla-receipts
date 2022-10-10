@@ -8,7 +8,7 @@ Korilla is Korean barbecue tacos truck that makes thousands of hungry customers 
 
 ## Objectives
 
-- Create a new `korrilla-receipts` app with
+- Create a new `korrilla-receipts` app with `create-react-app`
 - Create a reusable component that can be rendered with various data
 - Pass data down using props
 
