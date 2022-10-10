@@ -1,0 +1,1 @@
+# u2_lab_react_receipts
