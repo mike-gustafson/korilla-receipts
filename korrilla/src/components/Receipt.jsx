@@ -1,6 +1,6 @@
 import './Receipt.css';
 
-const Receipt = ({ receiptData }) => {
+const Receipt = ({ receiptData, payReceipt, unpayReceipt }) => {
 
     return (
         <div className={`Receipt ${receiptData.paid ? "Receipt-paid" : "Receipt-unpaid"}`}>
@@ -15,6 +15,8 @@ const Receipt = ({ receiptData }) => {
             <hr></hr>
             <div><span className="Receipt-line-name">Cost:</span> ${receiptData.order.cost}</div>
             {/* <div>Paid: {receiptData.paid ? "Yes" : "No"}</div> */}
+            {!receiptData.paid && <button className="Receipt-pay-button" onClick={payReceipt}>Pay</button>}
+            {receiptData.paid && <button className="Receipt-unpay-button" onClick={unpayReceipt}>Unpay</button>}
         </div>
     );
 }

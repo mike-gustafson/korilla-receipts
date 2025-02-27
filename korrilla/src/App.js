@@ -8,6 +8,18 @@ function App() {
 
   const [receipts, setReceipts] = useState(receiptsData);
 
+  const handlePay = (index) => {
+    const newReceipts = [...receipts];
+    newReceipts[index].paid = true;
+    setReceipts(newReceipts);
+  }
+
+  const handleUnpay = (index) => {
+    const newReceipts = [...receipts];
+    newReceipts[index].paid = false;
+    setReceipts(newReceipts);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,18 +28,30 @@ function App() {
       <div className="App-content">
           <h3>Paid receipts</h3>
           <div className="App-receipts">
+          {receipts.filter(receipt => receipt.paid).length === 0 && <div className="App-message">No paid receipts</div>}
           {receipts.map((receipt, index) => {
             if (receipt.paid) {
-              return <Receipt key={index} receiptData={receipt} />
+              return <Receipt 
+                        key={index} 
+                        receiptData={receipt}   
+                        payReceipt={() => handlePay(index)} 
+                        unpayReceipt={() => handleUnpay(index)}
+                     />
             }
           })}
         </div>
         
         <h3>Unpaid receipts</h3>
         <div className="App-receipts">
+          {receipts.filter(receipt => !receipt.paid).length === 0 && <div className="App-message">No unpaid receipts</div>}
           {receipts.map((receipt, index) => {
             if (!receipt.paid) {
-              return <Receipt key={index} receiptData={receipt} />
+              return <Receipt 
+                      key={index} 
+                      receiptData={receipt}   
+                      payReceipt={() => handlePay(index)} 
+                      unpayReceipt={() => handleUnpay(index)}
+                     />
             }
           })}
         </div>
