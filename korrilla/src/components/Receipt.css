@@ -31,3 +31,29 @@
 .Receipt-unpaid {
     background-color: rgb(230, 144, 144);
 }
+
+.Receipt-pay-button {
+    background-color: #413674;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.Receipt-pay-button:hover {
+    background-color: #5f5f5f;
+}
+
+.Receipt-unpay-button {
+    background-color: #5f5f5f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.Receipt-unpay-button:hover {
+    background-color: #413674;
+}
