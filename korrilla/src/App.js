@@ -26,8 +26,8 @@ function App() {
         <h1>Korilla</h1>
       </header>
       <div className="App-content">
-          <h3>Paid receipts</h3>
-          <div className="App-receipts">
+        <h3>Paid receipts</h3>
+        <div className="App-receipts">
           {receipts.filter(receipt => receipt.paid).length === 0 && <div className="App-message">No paid receipts</div>}
           {receipts.map((receipt, index) => {
             if (receipt.paid) {
