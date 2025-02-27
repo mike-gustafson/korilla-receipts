@@ -10,7 +10,7 @@ function App() {
 
   const handlePay = (index) => {
     const newReceipts = [...receipts];
-    newReceipts[index].paid = true;
+    newReceipts[index].paid = !newReceipts[index].paid;
     setReceipts(newReceipts);
   }
 
@@ -19,6 +19,25 @@ function App() {
     newReceipts[index].paid = false;
     setReceipts(newReceipts);
   }
+
+  // const togglePaymentStatus = (index) => { 
+  //   setReceipts(receipts.map((receipt, i) => i === index ? { ...receipt, paid: !receipt.paid } : receipt )); };
+
+  // const renderReceipts = (isPaid) => {
+  //   const filteredReceipts = receipts.filter(receipt => receipt.paid === isPaid);
+
+  //   return filteredReceipts.length > 0 ? (
+  //     filteredReceipts.map((receipt, index) => (
+  //       <Receipt 
+  //         key={index} 
+  //         receiptData={receipt}   
+  //         togglePayment={() => togglePaymentStatus(index)} 
+  //       />
+  //     ))
+  //   ) : (
+  //     <div className="App-message">{isPaid ? "No paid receipts" : "No unpaid receipts"}</div>
+  //   );
+  // };
 
   return (
     <div className="App">
