@@ -14,7 +14,6 @@ const Receipt = ({ receiptData, payReceipt, refundReceipt }) => {
             <div><span className="Receipt-line-name">Drink:</span> {receiptData.order.drink}</div>
             <hr></hr>
             <div><span className="Receipt-line-name">Cost:</span> ${receiptData.order.cost}</div>
-            {/* <div>Paid: {receiptData.paid ? "Yes" : "No"}</div> */}
             {!receiptData.paid && <button className="Receipt-pay-button" onClick={payReceipt}>Pay</button>}
             {receiptData.paid && <button className="Receipt-refund-button" onClick={refundReceipt}>Refund</button>}
         </div>
