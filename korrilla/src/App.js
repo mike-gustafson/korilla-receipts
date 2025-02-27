@@ -10,10 +10,28 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Korilla</h1>
-      {receipts.map((receipt, index) => {
-          return <Receipt key={index} receiptData={receipt} />
-        })}
+      <header className="App-header">
+        <h1>Korilla</h1>
+      </header>
+      <div className="App-content">
+          <h3>Paid receipts</h3>
+          <div className="App-receipts">
+          {receipts.map((receipt, index) => {
+            if (receipt.paid) {
+              return <Receipt key={index} receiptData={receipt} />
+            }
+          })}
+        </div>
+        
+        <h3>Unpaid receipts</h3>
+        <div className="App-receipts">
+          {receipts.map((receipt, index) => {
+            if (!receipt.paid) {
+              return <Receipt key={index} receiptData={receipt} />
+            }
+          })}
+        </div>
+      </div>
     </div>
   );
 }
