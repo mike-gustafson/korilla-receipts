@@ -14,7 +14,7 @@ function App() {
     setReceipts(newReceipts);
   }
 
-  const handleUnpay = (index) => {
+  const handleRefund = (index) => {
     const newReceipts = [...receipts];
     newReceipts[index].paid = false;
     setReceipts(newReceipts);
@@ -35,7 +35,7 @@ function App() {
                         key={index} 
                         receiptData={receipt}   
                         payReceipt={() => handlePay(index)} 
-                        unpayReceipt={() => handleUnpay(index)}
+                        refundReceipt={() => handleRefund(index)}
                      />
             }
           })}
@@ -50,7 +50,7 @@ function App() {
                       key={index} 
                       receiptData={receipt}   
                       payReceipt={() => handlePay(index)} 
-                      unpayReceipt={() => handleUnpay(index)}
+                      refundReceipt={() => handleRefund(index)}
                      />
             }
           })}

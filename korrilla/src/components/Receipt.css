@@ -45,7 +45,7 @@
     background-color: #5f5f5f;
 }
 
-.Receipt-unpay-button {
+.Receipt-refund-button {
     background-color: #5f5f5f;
     color: white;
     border: none;
@@ -54,6 +54,6 @@
     cursor: pointer;
 }
 
-.Receipt-unpay-button:hover {
+.Receipt-refund-button:hover {
     background-color: #413674;
 }
